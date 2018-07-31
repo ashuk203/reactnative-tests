@@ -21,7 +21,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
 
   constructor(){
     super();
@@ -46,7 +46,7 @@ export default class App extends Component<Props> {
 function messageToConsole(inputs) {
   console.log("Hello world");
   numButtons++;
-  var tempString = "First Button " + numButtons;
+  var tempString = numButtons + " clicks";
   inputs.setState({SampleText : tempString});
 }
 

@@ -5,6 +5,7 @@
 
 import 'react-native';
 import React from 'react';
+import { shallow } from 'enzyme';
 import Intro from '../Intro';
 
 // Note: test renderer must be required after react-native.
