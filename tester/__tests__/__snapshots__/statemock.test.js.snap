@@ -55,7 +55,8 @@ exports[`Testing Welcome renders as expected 1`] = `
 Cmd+D or shake for dev menu
   </Text>
   <Button
-    title="Click count: undefined"
+    onPress={[Function]}
+    title="Click to start"
   />
 </View>
 `;

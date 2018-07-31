@@ -3,19 +3,19 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
 // imported as a connected component!
-import Welcome from '../components/Welcome';
+import App from '../App';
 
 const middlewares = []; // you can mock any middlewares here if necessary
 const mockStore = configureStore(middlewares);
 
 const initialState = {
-  numClicks : 0
+  numClicks : 0,
 };
 
 describe('Testing Welcome', () => {
   it('renders as expected', () => {
     const wrapper = shallow(
-      <Welcome />,
+      <App />,
       { context: { store: mockStore(initialState) } },
     );
     expect(wrapper.dive()).toMatchSnapshot();
