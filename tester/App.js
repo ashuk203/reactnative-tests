@@ -7,10 +7,10 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native'
+import Welcome from './components/Welcome.js'
 
 
-var numButtons = 1;
 var buttonString = 'First Button ';
 
 const instructions = Platform.select({
@@ -27,44 +27,27 @@ export default class App extends Component {
     super();
 
     this.state={
-      SampleText : "First Button"
+      numClicks : 0
     }
+  }
+  
+  messageToConsole = () => {
+    var updatedClicks = this.state.numClicks + 1
+    this.setState({numClicks : updatedClicks})
   }
  
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <Button title = {this.state.SampleText}  onPress={() => messageToConsole(this)} />
-      </View>
+      <Welcome numClicks = {this.state.numClicks} messageToConsole = {this.messageToConsole} />
     );
   }
 }
 
-function messageToConsole(inputs) {
+/*function messageToConsole(inputs) {
   console.log("Hello world");
-  numButtons++;
-  var tempString = numButtons + " clicks";
+  var updatedClicks = {inputs.state.numClicks} + 1;
+  inputs.setState({numClicks : updatedClicks});
+  numClicks++;
+  var tempString = numClicks + " clicks";
   inputs.setState({SampleText : tempString});
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+}*/
